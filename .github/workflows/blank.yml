@@ -29,6 +29,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           docker pull registry.k8s.io/metrics-server/metrics-server:v0.6.3
-          docker login --username=x2much --password='xx0804123456' registry.cn-chengdu.aliyuncs.com
+          docker login --username=${{ secrets.user }} --password=${{ secrets.password }} registry.cn-chengdu.aliyuncs.com
           docker tag registry.k8s.io/metrics-server/metrics-server:v0.6.3 registry.cn-chengdu.aliyuncs.com/x2much/metrics-server:v0.6.3
           docker push registry.cn-chengdu.aliyuncs.com/x2much/metrics-server:v0.6.3
